@@ -1,12 +1,7 @@
-// implement mul(2)(3)(4)    24
+//implement duplicate([1,2,3,4,5]) ==>  [1,2,3,.4.5,1,2,3,4,5]
 
-function mul(x){
-  return function(y) {
-      return function(z) {
-          return x*y*z;
-      }
-  }
-}
 
-var result = mul(2)(3)(4);
+duplicate = (array) => { return array.concat(array)};
+
+let result = duplicate([1,2,3,4,5]);
 console.log(result);
