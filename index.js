@@ -1,25 +1,14 @@
-let array =[5,7,2,9,3,9,4,5];
+//sort array without using sort method
 
-//expected o/p  = [7,2,3,4]
+let array = [7,4,8,3,0,1,3];
 
-
-//solution1
-var newArray =[];
-
-for(let i=0;i<array.length;i++) {
-  if(array.filter(value => value === array[i]).length === 1)
-  newArray.push(array[i]);
+for(let i=0; i<array.length; i++){
+  for(let j=0; j<array.length; j++) {
+   if(array[i]- array[j] < 0) {
+     let temp = array[i];
+     array[i] = array[j];
+     array[j] = temp;
+   }
+  }
 }
-console.log(newArray);
-
-
-//solution2
-
-let output=[];
-array.map(function(currentValue, index, array){
-  if(array.filter(currentValue => currentValue === array[index]).length === 1)
-  output.push(currentValue);
-})
-
-console.log(output);
-
+console.log(array);
